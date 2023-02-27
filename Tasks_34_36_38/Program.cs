@@ -11,9 +11,7 @@
 //Найдите разницу между максимальным и минимальным элементов массива.
 // [3 7 22 2 78] -> 76
 
-
 Console.Clear();
-
 Console.WriteLine("1 - Программа для подсчета количества четных чисел в массиве случайных трёхзначных чисел.");
 Console.WriteLine("2 - Программа для подсчета суммы чисел в массиве, стоящих на нёчетных позициях.");
 Console.WriteLine("3 - Программа для подсчета разницы между максимальным и минимальным элементов массива вещественных чисел.");
@@ -50,31 +48,33 @@ static int Prompt(string message)// Метод запроса числа.
     return result;
 }
 
-void PrintArray(int[] arr)
-    {
-        System.Console.Write("[");
-        for (int i = 0; i < arr.Length - 1; i++)
-            {
-            System.Console.Write($"{arr[i]}, ");
-            }
-        System.Console.Write($"{arr[arr.Length - 1]}");
-        System.Console.Write("]");
-    }
-void Task_34() // Метод подсчета количества четных чисел в массиве
+void PrintArray(int[] array)
 {
-        int[] arr = new int[Length];
+  System.Console.Write("[");
+  for (int i = 0; i < array.Length - 1; i++)
+       {
+          System.Console.Write($"{array[i]}, ");
+        }
+        System.Console.Write($"{array[Length - 1]}");
+        System.Console.Write("]");
+}
+void Task_34() // Метод подсчета количества четных чисел в массиве
+  {
+
+    int count = 0;
+        int[] array = new int[Length];
         Random random = new Random();
         for (int i = 0; i < Length; i++)
-        arr[i] = random.Next(100, 999);
-            
-int count = 0;
-for (int index = 1; index < Length; index++)
-     {
-      while (arr[index]%2 == 0)
-      count +=1;
-     }
+        array[i] = random.Next(100, 999);
+          
 
-PrintArray(arr);  
+for (int ind = 0; ind < array.Length; ind++)
+  {
+     if (array[ind]%2 == 0)
+     count ++;
+  }
+     
+PrintArray(array);  
 Console.WriteLine(" количество четных чисел в массиве" + " -> " + count); 
 }
 
